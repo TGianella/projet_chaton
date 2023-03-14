@@ -11,16 +11,21 @@ Category.destroy_all
 end
 
 20.times do |_|
-  Order.create!(user: User.all.sample)
+  Order.create!(user: User.all.sample,
+                status: 'paid')
 end
 
 5.times do |_|
   Category.create(name: Faker::Hobby.activity)
 end
 
+img_url = ["https://i.imgur.com/pqrE0rb.png","https://i.imgur.com/IfSX8GV.png","https://i.imgur.com/seqQtRV.png"]
 20.times do |_|
   Item.create!(title: Faker::Games::Pokemon.name,
-               category: Category.all.sample)
+               category: Category.all.sample,
+               price: 199.00,
+               image_url: img_url[rand(0..2)] 
+              )
 end
 
 Order.all.each do |order|
