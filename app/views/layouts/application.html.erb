@@ -20,5 +20,8 @@
     <main class="container mx-auto mt-28 px-5 flex-column items-between">
       <%= yield %>
     </main>
+    <div data-turbo="false">
+    <%= render "layouts/footer"%>
+    </div>
   </body>
 </html>
