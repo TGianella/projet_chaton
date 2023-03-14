@@ -22,7 +22,7 @@ img_url = ["https://i.imgur.com/pqrE0rb.png","https://i.imgur.com/IfSX8GV.png","
 20.times do |_|
   Item.create!(title: Faker::Games::Pokemon.name,
                category: Category.all.sample,
-               price: 199.00,
+               price: 199.99,
                image_url: img_url[rand(0..2)] 
               )
 end
