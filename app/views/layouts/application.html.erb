@@ -9,9 +9,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fontawesome.com/v5/icons/vial?s=solid&f=classic">
   </head>
 
   <body>
+  <div data-turbo="false">
+  <%= render "layouts/navbar"%>
+  </div>
     <main class="container mx-auto mt-28 px-5 flex-column items-between">
       <%= yield %>
     </main>
