@@ -17,7 +17,8 @@
   <div data-turbo="false">
   <%= render "layouts/navbar"%>
   </div>
-    <main class="container mx-auto mt-28 px-5 flex-column items-between">
+  <%= render 'layouts/hero-banner' %>
+    <main class="container mx-auto mt-28 px-5">
       <%= yield %>
     </main>
     <div data-turbo="false">
