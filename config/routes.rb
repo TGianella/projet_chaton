@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :items
   resources :orders
+  resources :carts
   get '/contact' => "static_pages#contact"
   get '/about' => "static_pages#about"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?

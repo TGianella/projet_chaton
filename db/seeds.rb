@@ -11,7 +11,8 @@ Category.destroy_all
 end
 
 20.times do |_|
-  Order.create!(user: User.all.sample)
+  Order.create!(user: User.all.sample,
+                status: 'paid')
 end
 
 5.times do |_|
