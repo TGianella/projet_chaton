@@ -19,7 +19,6 @@ end
 end
 
 img_url = ["https://i.imgur.com/pqrE0rb.png","https://i.imgur.com/IfSX8GV.png","https://i.imgur.com/seqQtRV.png"]
-
 20.times do |_|
   Item.create!(title: Faker::Games::Pokemon.name,
                category: Category.all.sample,

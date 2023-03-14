@@ -1,3 +1,4 @@
+<h1 class="text-center text-xl">NEW CATS OF THE WEEK</h1>
 <div class="grid  xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-center  ">
 <% @items.each do |item| %>
     <%= render partial: 'card', locals:{item: item}  %>
