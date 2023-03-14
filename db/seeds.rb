@@ -23,9 +23,15 @@ img_url = ["https://i.imgur.com/pqrE0rb.png","https://i.imgur.com/IfSX8GV.png","
 20.times do |_|
   Item.create!(title: Faker::Games::Pokemon.name,
                category: Category.all.sample,
-               price: 199.99,
-               image_url: img_url[rand(0..2)] 
+               image_url: img_url[rand(0..2)], 
+               rarity: rand(0..4)
               )
+end
+
+facteur=[rand(1.00..24.00),rand(25.00..50.00),rand(51.00..99.00),rand(100.00..455.00),rand(456.00..999.00)]
+
+Item.all.each do |item|
+  item.update!(price: ('%.02f' % facteur[item.rarity]))
 end
 
 Order.all.each do |order|

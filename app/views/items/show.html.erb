@@ -1,7 +1,7 @@
 <main class="container mx-auto mt-28 px-5 flex">
-  <div class="card flex-1 pl-20">
-    <img class="xl-card-rarity" src="https://i.imgur.com/ethHueo.png">
-    <div class="big-card item-card card_full max-w-sm overflow-hidden shadow-lg">
+  <div class=" animate__animated  animate__backInLeft card flex-1 pl-20">
+    <img class="xl-card-rarity" src="<%=image_path("rarity-#{@item.rarity}")%>">
+    <div class="big-card item-card card_full max-w-sm overflow-hidden shadow-lg rarity-<%=@item.rarity%>">
       <div class="card-texture">
         <img class="w-full" src="https://i.imgur.com/vbCJQJe.png" alt="texture">
       </div>
@@ -10,8 +10,8 @@
       </div>
     </div>
   </div>
-  <div class="show-card-content flex-1">
-    <div class="show-title"><%= @item.title%></div>
+  <div class="show-card-content animate__animated  animate__backInRight flex-1">
+    <div class=" show-title"><%= @item.title%></div>
     <div class="show-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eaque, ea dicta fugit saepe minima molestias consequatur beatae, nulla, eum tempora perferendis natus pariatur aut?</div>
     <p class="text-xl mt-5 mb-2">Quantity :</p>
     <select name="quantity-item" id="quantity">

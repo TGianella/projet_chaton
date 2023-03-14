@@ -1,19 +1,21 @@
 
 <div class="card">
-  <img class="card-rarity" src="https://i.imgur.com/ethHueo.png">
+  <img class="card-rarity" src="<%=image_path("rarity-#{item.rarity}")%>">
     <a href="<%=item_path(item)%>">
-  <div class="small-card item-card card_full max-w-sm overflow-hidden shadow-lg">
+  <div class="small-card item-card card_full max-w-sm overflow-hidden shadow-lg rarity-<%=item.rarity%>">
   <div class="card-texture">
       <img class="w-full " src="https://i.imgur.com/vbCJQJe.png" alt="texture">
       </div>
     <div class="card-background">
-      <img class="w-full " src="<%=item.image_url%>" alt="dimaond">
+      <img class="w-full " src="<%=item.image_url%>" alt="">
     </div>
     <div class="card-content">
       <div class="card-title"><%= item.title %></div>
       <div class="card-footer">
-        <div class="card-price "><%= item.price %></div>
+        <div class="card-price "><%= item.price %> €</div>
+        <div class="card-add-btn-bg">
         <%= button_to "Add to cart", items_path, class:"btn card-add-btn" %>
+        </div>
       </div>
     </div>
   </div>
