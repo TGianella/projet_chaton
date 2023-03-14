@@ -1,0 +1,27 @@
+.show-title {
+  font-size: 7rem;
+  font-weight: 800;
+}
+
+.show-description {
+  font-size: 1.5rem;
+}
+
+.show-price {
+  flex: 2;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.show-price-btn {
+  flex: 1;
+  line-height: 2;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 100px;
+}
+
+.show-card-footer {
+  margin-top: 20px;
+}
