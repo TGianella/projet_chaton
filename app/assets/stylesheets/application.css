@@ -20,3 +20,17 @@
 * {
    font-family: 'Nunito Sans', sans-serif;
     }
+
+.fa-shopping-basket {
+   color: rgb(236, 236, 236);
+}
+/* 
+* {
+   outline: red 1px solid;
+} */
+
+@media only screen and (max-width: 640px) {
+   .cart {
+     display:none;
+   }
+ }
