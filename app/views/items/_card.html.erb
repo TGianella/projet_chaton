@@ -1,18 +1,20 @@
+
 <div class="card">
-  <img class="card-rarity" src="<%=image_path("diamond.png")%>">
+  <img class="card-rarity" src="https://i.imgur.com/ethHueo.png">
   <div class="item-card card_full max-w-sm overflow-hidden shadow-lg">
   <div class="card-texture">
-      <img class="w-full " src="<%=image_path("paper-texture.png")%>" alt="texture">
+      <img class="w-full " src="https://i.imgur.com/vbCJQJe.png" alt="texture">
       </div>
     <div class="card-background">
-      <img class="w-full " src="<%=image_path("doctor-cat.png")%>" alt="dimaond">
+      <img class="w-full " src="<%=item.image_url%>" alt="dimaond">
     </div>
     <div class="card-content">
-      <div class="card-title">Bored Cat</div>
+      <div class="card-title"><%= item.title %></div>
       <div class="card-footer">
-        <div class="card-price ">199.00 €</div>
+        <div class="card-price "><%= item.price %></div>
         <%= button_to "Add to cart", items_path, class:"btn card-add-btn" %>
       </div>
     </div>
   </div>
 </div>
+

@@ -1,10 +1,6 @@
-<%3.times do %>
-  <div class="colonne flex-column">
-    <div class="ligne flex justify-center">
-      <%3.times do  %>
-        <%= render 'card' %>
-      <% end %>
-    </div>
+<div class="grid  xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-center  ">
+<% @items.each do |item| %>
+    <%= render partial: 'card', locals:{item: item}  %>
+    <% end %>
   </div>
-<% end %>
-
+    
