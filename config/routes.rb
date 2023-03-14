@@ -3,14 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :items
   resources :orders
-<<<<<<< HEAD
   get '/contact' => "static_pages#contact"
   get '/about' => "static_pages#about"
 
-=======
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
->>>>>>> development
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
