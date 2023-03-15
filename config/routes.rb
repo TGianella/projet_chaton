@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :items
   resources :orders
+  resources :carts
+  resources :order_items, only: %i[create destroy]
+  post 'order_items/:id/add' => 'order_items#add_quantity', as: 'order_items_add'
+  post 'order_items/:id/reduce' => 'order_items#reduce_quantity', as: 'order_items_reduce'
   get '/contact' => 'static_pages#contact'
   get '/about' => 'static_pages#about'
-  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
