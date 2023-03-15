@@ -3,7 +3,6 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.find(params[:id])
-    @order = Order.find_by(user_id: current_user.id)
   end
 
   def destroy
