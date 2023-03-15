@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :welcome_send
+  after_create :welcome_send, :create_cart
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -15,10 +15,10 @@ class User < ApplicationRecord
   end
 
   def after_database_authentication
-    cart = self.cart
-    puts '$' * 60
-    puts "Avant : panier inexistant = #{cart.nil?}"
-    Cart.create!(user: self) if cart.nil?
-    puts "Après : panier inexistant = #{cart.nil?}"
+    Cart.create(user: self) if cart.nil?
+  end
+
+  def create_cart
+    Cart.create(user: self)
   end
 end
