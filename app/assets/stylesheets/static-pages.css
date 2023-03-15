@@ -13,6 +13,7 @@
 .p-content {
   font-size: 1.7rem;
   font-weight: 600;
+  text-align: justify;
 }
 
 .content-section {
@@ -23,7 +24,6 @@
 
 .right {
   align-items: end;
-  text-align: right;
 }
 
 .left {
