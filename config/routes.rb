@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :items
   resources :orders
   resources :carts
+  resources :order_items, only: %i[create destroy]
+  post 'order_items/:id/add' => 'order_items#add_quantity', as: 'order_items_add'
+  post 'order_items/:id/reduce' => 'order_items#reduce_quantity', as: 'order_items_reduce'
   get '/contact' => 'static_pages#contact'
   get '/about' => 'static_pages#about'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
