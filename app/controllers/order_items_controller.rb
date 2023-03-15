@@ -1,8 +1,5 @@
 class OrderItemsController < ApplicationController
   def create
-    puts '$' * 60
-    puts "Item_id = #{params[:item_id]}"
-    puts params
     item = Item.find(params[:item_id])
     current_cart = current_user.cart
 
@@ -17,13 +14,30 @@ class OrderItemsController < ApplicationController
 
     @order_item.save
     flash[:success] = 'Image ajoutée au panier'
-    puts '$' * 60
-    puts current_cart.order_items.last
   end
 
-  def add_quantity; end
+  def add_quantity
+    @order_item = OrderItem.find(params[:id])
+    @order_item.quantity += 1
+    if @order_item.save
+      flash[:success] = 'Quantité augmentée !'
+    else
+      flash[:alert] = 'Impossible de commander plus de 99 exemplaires'
+    end
+    redirect_to cart_path
+  end
 
-  def reduce_quantity; end
+  def reduce_quantity
+    @order_item = OrderItem.find(params[:id])
+    @order_item.quantity -= 1
+    if @order_item.save
+      flash[:success] = 'Quantité diminuée !'
+    else
+      @order_item.destroy
+      flash[:success] = 'Produit retiré du panier !'
+    end
+    redirect_to cart_path
+  end
 
   def destroy
     @order_item = OrderItem.find(params[:id])

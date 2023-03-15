@@ -2,4 +2,6 @@
 <% @cart.order_items.each do |order_item| %>
   <p><%= "#{order_item.item.title} - #{order_item.quantity}" %></p>
   <%= button_to "Supprimer", order_item_path(order_item), method: 'delete' %>
+  <%= button_to "+", order_items_add_path(order_item) %>
+  <%= button_to "-", order_items_reduce_path(order_item) %>
 <% end %>
