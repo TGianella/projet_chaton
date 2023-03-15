@@ -2,7 +2,7 @@ ActionMailer::Base.perform_deliveries = false
 User.destroy_all
 Item.destroy_all
 Order.destroy_all
-Cart.destroy_all
+# Cart.destroy_all
 OrderItem.destroy_all
 Category.destroy_all
 
