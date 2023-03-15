@@ -1,0 +1,4 @@
+<h1>Panier de <%= @cart.user.email %></h1>
+<% @cart.items.each do |item| %>
+  <p><%= item.title %></p>
+<% end %>
