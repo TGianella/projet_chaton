@@ -5,3 +5,5 @@
   <%= button_to "+", order_items_add_path(order_item) %>
   <%= button_to "-", order_items_reduce_path(order_item) %>
 <% end %>
+<%= button_to "Vider le panier", cart_path(@cart), method: 'delete' %>
+
