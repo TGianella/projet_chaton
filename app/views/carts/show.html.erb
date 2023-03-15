@@ -1,9 +1,16 @@
-<h1>Panier de <%= @cart.user.email %></h1>
-<% @cart.order_items.each do |order_item| %>
-  <p><%= "#{order_item.item.title} - #{order_item.quantity}" %></p>
-  <%= button_to "Supprimer", order_item_path(order_item), method: 'delete' %>
-  <%= button_to "+", order_items_add_path(order_item) %>
-  <%= button_to "-", order_items_reduce_path(order_item) %>
-<% end %>
-<%= button_to "Vider le panier", cart_path(@cart), method: 'delete' %>
-
+<%= render 'layouts/hero-little' %>
+<main class="container mx-auto mt-20 px-5 grid grid-cols-10">
+  <div class="item-section col-span-6">
+  <% @cart.order_items.each do |order_item| %>
+    <%= render partial: "item-cart", locals:{order_item: order_item} %>
+    <% end %>
+  </div>
+  <div class="summary-section col-span-4">
+    <h1 class="sub-title">Summary :</h1>
+    <p>
+    <%= @item_quantity %> products
+    <%= @item_quantity_price %>€ products
+    </p>
+    <%= button_to "Vider le panier", cart_path(@cart), method: 'delete' %>
+  </div>
+</main>
