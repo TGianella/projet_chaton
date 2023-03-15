@@ -9,6 +9,10 @@ class OrdersController < ApplicationController
     @cart.order_items.each do |order_item|
       OrderItem.create!(order: @order, item: order_item.item, quantity: order_item.quantity)
     end
+    @cart.destroy
+    @cart = Cart.new(user: current_user)
+    @cart.save
+    redirect_to root_path
   end
 
   def show
