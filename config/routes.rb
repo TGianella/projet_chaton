@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :carts
   resources :order_items, only: %i[create destroy]
+  resources :orders, only: %i[create show]
   post 'order_items/:id/add' => 'order_items#add_quantity', as: 'order_items_add'
   post 'order_items/:id/reduce' => 'order_items#reduce_quantity', as: 'order_items_reduce'
   get '/contact' => 'static_pages#contact'
