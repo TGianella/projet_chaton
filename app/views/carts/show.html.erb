@@ -1,4 +1,5 @@
 <h1>Panier de <%= @cart.user.email %></h1>
 <% @cart.order_items.each do |order_item| %>
   <p><%= "#{order_item.item.title} - #{order_item.quantity}" %></p>
+  <%= button_to "Supprimer", order_item_path(order_item), method: 'delete' %>
 <% end %>

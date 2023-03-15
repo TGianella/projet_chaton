@@ -14,7 +14,7 @@
       <div class="card-footer">
         <div class="card-price "><%= item.price %> €</div>
         <div class="card-add-btn-bg">
-          <%= button_to "Add to cart", order_items_path(item.id), params: { item_id: item.id }, class:"btn card-add-btn" %>
+          <%= button_to "Add to cart", order_items_path(item_id: item.id), class:"btn card-add-btn" %>
         </div>
       </div>
     </div>
