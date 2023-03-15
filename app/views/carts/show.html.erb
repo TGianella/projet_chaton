@@ -8,8 +8,8 @@
   <div class="summary-section col-span-4">
     <h1 class="sub-title">Summary :</h1>
     <p>
-    <%= @item_quantity %> products
-    <%= @item_quantity_price %>€ products
+    <%= @cart.total_quantity %> products
+    <%= @cart.total_price %>€ products
     </p>
     <%= button_to "Vider le panier", cart_path(@cart), method: 'delete' %>
   </div>
