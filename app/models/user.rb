@@ -12,4 +12,12 @@ class User < ApplicationRecord
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
+
+  def after_database_authentication
+    cart = self.cart
+    puts '$' * 60
+    puts "Avant : panier inexistant = #{cart.nil?}"
+    Cart.create!(user: self) if cart.nil?
+    puts "Après : panier inexistant = #{cart.nil?}"
+  end
 end
