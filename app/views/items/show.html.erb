@@ -24,7 +24,7 @@
     </select>
     <div class="card-footer show-card-footer">
     <div class="show-price "><%= @item.price %> €</div>
-    <button class=" show-price-btn card-add-btn  btn" href="<%= order_items_path(@item.id) %>">Add to cart</button>
+    <%= button_to "Add to cart", order_items_path(@item.id), params: { item_id: @item.id }, class:"btn card-add-btn" %>
     </div>
   </div>
 </main>
