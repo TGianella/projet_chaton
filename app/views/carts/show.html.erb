@@ -22,7 +22,7 @@
       <p class="p-content">
         <%= '%.02f' % @cart.total_price %>€
       </p>
-      <%= button_to "Payer", checkout_create_path(total: 50), class: "btn btn-primary", remote: true, data: { turbo: false } %>
+      <%= button_to "Payer", checkout_create_path(total: @cart.total_price), class: "btn btn-primary", remote: true, data: { turbo: false } %>
     </div>
   </div>
 </main>
