@@ -126,6 +126,11 @@
     display: flex;
     justify-content: center;
   }
+
+  .cart-card-wrapper{
+    position: relative;
+    margin-bottom: 1rem;
+  }
 }
 
 

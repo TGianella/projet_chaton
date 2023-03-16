@@ -76,6 +76,12 @@
   .main-responsive {
     display: flex;
     flex-direction: column;
+    
+  }
+  .order-grid {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 
   .item-card-content-header {
@@ -113,17 +119,9 @@
     align-items: center;
   }
   .summary-section {
-    padding: 3rem;
+    padding: 2rem;
   }
   .summary-section-footer {
-    flex-direction: column;
     align-items: center;
-  }
-}
-@media only screen and (max-width: 1280px) {
-  .order-grid {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
   }
 }
