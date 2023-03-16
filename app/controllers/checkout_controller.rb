@@ -1,5 +1,6 @@
 class CheckoutController < ApplicationController
-  before_action :create_order, only: [:create]
+  # before_action :success, only: [:create]
+
   def create
     @total = params[:total].to_d
     @session = Stripe::Checkout::Session.create(
@@ -8,13 +9,13 @@ class CheckoutController < ApplicationController
         {
           price_data: {
             currency: 'eur',
-            unit_amount: (@total*100).to_i,
+            unit_amount: (@total * 100).to_i,
             product_data: {
-              name: 'Rails Stripe Checkout',
-            },
+              name: 'Rails Stripe Checkout'
+            }
           },
           quantity: 1
-        },
+        }
       ],
       mode: 'payment',
       success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}',
@@ -24,10 +25,11 @@ class CheckoutController < ApplicationController
   end
 
   def success
+    create_order
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
     current_user.orders.last.validate_payment
-    empty_cart
+    Cart.empty_for(current_user)
   end
 
   def cancel
@@ -37,23 +39,11 @@ class CheckoutController < ApplicationController
   private
 
   def create_order
-    @cart = current_user.cart
-    @order = Order.new(user: current_user, status: "pending")
-    @order.save
-    @order.import_cart(@cart)
-    
+    @order = Order.create_for(current_user)
+    @order.import_cart(current_user.cart)
   end
 
   def cancel_order
-    @order = current_user.orders.last
-    @order.destroy
+    current_user.orders.last.destroy
   end
-
-  def empty_cart
-    @cart = current_user.cart
-    @cart.destroy
-    @cart = Cart.new(user: current_user)
-    @cart.save
-  end
-
 end

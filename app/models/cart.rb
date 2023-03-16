@@ -8,4 +8,10 @@ class Cart < ApplicationRecord
       OrderItem.create!(cart: self, item: order_item.item, quantity: order_item.quantity)
     end
   end
+
+  def self.empty_for(user)
+    user.cart.destroy
+    cart = Cart.new(user: user)
+    cart.save
+  end
 end
