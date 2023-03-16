@@ -11,18 +11,16 @@
       </div>
       <div class="card-content">
         <div class="card-title"><%= item.title %></div>
+      </a>
         <div class="card-footer">
           <div class="card-price "><%= item.price %> €</div>
+            <% if user_signed_in? %>
+              <%= button_to "Add to cart", order_items_path(item_id: item.id), class: "card-add-btn" %>
+            <% else %>
+              <%= button_to "Add to cart", new_user_session_path, class: "card-add-btn"%>
+            <% end %>
         </div>
       </div>
     </div>
-  </a>
-  <div class="card-add-btn-bg">
-    <% if user_signed_in? %>
-      <%= button_to "Add to cart", order_items_path(item_id: item.id), class:"btn card-add-btn" %>
-    <% else %>
-      <%= button_to "Add to cart", new_user_session_path, class:"btn card-add-btn" %>
-    <% end %>
-  </div>
 </div>
 
