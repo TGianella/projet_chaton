@@ -1,5 +1,5 @@
 <%= render 'layouts/hero-little' %>
-<main class="container mx-auto mt-20 px-5 grid grid-cols-10">
+<main class="main-responsive container mx-auto mt-20 px-5 grid grid-cols-10">
   <% if @cart.order_items.present? %>
     <div class="item-section col-span-6">
       <% @cart.order_items.each do |order_item| %>

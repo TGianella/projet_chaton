@@ -35,7 +35,7 @@
               <a href="<%= about_path %>" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-3xl px-3 py-2 text-sm font-medium">About</a>
               <a href="<%= contact_path %>" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-3xl px-3 py-2 text-sm font-medium">Contact</a>
             </div>
-        </div>      
+        </div>
       </div>
       <a href="<%= user_signed_in? ? cart_path(current_user.cart) : new_user_session_path %>" class="cart rounded-3xl"><i class="fas fa-shopping-basket fa-2x hover:bg-gray-700 rounded-3xl px-3 py-2"></i></a>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
@@ -54,12 +54,12 @@
           <div class="dropp absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <!-- Active: "bg-gray-100", Not Active: "" -->
             <% if current_user%>
-              <a href="<%= edit_user_registration_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Mon profil</a>
-              <a href="<%=orders_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Mes commandes</a>
+              <a href="<%= edit_user_registration_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">My account</a>
+              <a href="<%=orders_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Orders</a>
               <% if isAdmin? %>
-                <a href="<%= admin_users_path %>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Gestion Admin</a>
+                <a href="<%= admin_users_path %>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Admin page</a>
               <% end %>
-              <a href="<%= destroy_user_session_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Se déconnecter</a>
+              <a href="<%= destroy_user_session_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Log out</a>
             <%else %>
               <a href="<%= new_user_session_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Log-in</a>
               <a href="<%= new_user_registration_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Sign-up</a>
