@@ -4,6 +4,11 @@
   margin: 2rem;
 }
 
+.cart-card-wrapper{
+  position: relative;
+  margin: 1rem;
+}
+
 .card-texture {
   mix-blend-mode: multiply;
   position: absolute;
@@ -22,17 +27,21 @@
   );
   border-radius: 25px;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
-
 }
 
-.small-card{
+.small-card {
   width: 20rem;
   height: 20rem;
 }
 
-.big-card{
-  width:25rem;
-  height:25rem;
+.big-card {
+  width: 25rem;
+  height: 25rem;
+}
+
+.cart-card {
+  width: 10rem;
+  height: 10rem;
 }
 
 .card-background {
@@ -54,7 +63,6 @@
   font-style: italic;
   font-size: 2rem;
   color: var(--color-font-white);
-  
 }
 
 .card-price {
@@ -73,11 +81,13 @@
 .card-add-btn {
   padding: 2px 10px;
   border: 1px white solid;
-  color : var(--color-font-white);
+  color: var(--color-font-white);
   border-radius: 20px;
   font-weight: 400;
+  position: absolute;
+  bottom: 10px;
+  right: 130px;
 }
-
 
 .card-rarity {
   z-index: 1000;
@@ -87,7 +97,7 @@
   width: 8rem;
 }
 
-.xl-card-rarity{
+.xl-card-rarity {
   z-index: 1000;
   position: absolute;
   top: 0;
@@ -95,8 +105,9 @@
   width: 9rem;
 }
 
-/* RESPONSIVE INDEX PAGE*/
 
+
+/* RESPONSIVE INDEX PAGE*/
 
 @media only screen and (max-width: 925px) {
   .item-card {
