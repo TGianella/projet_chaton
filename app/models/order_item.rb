@@ -5,4 +5,8 @@ class OrderItem < ApplicationRecord
 
   # validates :item_id, uniqueness: { scope: :order_id, message: "ne peut être qu'une seule fois dans une commande" }
   validates :quantity, numericality: { in: 1..99 }
+
+  def total_price
+    quantity * item.price
+  end
 end

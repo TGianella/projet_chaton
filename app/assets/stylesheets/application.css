@@ -25,11 +25,16 @@
 
 }
 
+main{
+   min-height: 86vh;
+}
+
 * {
    font-family: 'Nunito Sans', sans-serif;
    box-sizing: border-box;
    box-sizing: border-box;
-   color : var(--color-font-dark)
+   color : var(--color-font-dark);
+   /* outline: 1px red solid; */
     }
 
 body {
