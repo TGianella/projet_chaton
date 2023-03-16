@@ -1,16 +1,16 @@
-.cart-card-wrapper{
+.cart-card-wrapper {
   border-radius: 25px;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
 }
-.cart-card{
+.cart-card {
   box-shadow: none;
 }
-.item-card img{
+.item-card img {
   border-top-left-radius: 22px;
   border-bottom-left-radius: 22px;
 }
 
-.item-card-content{
+.item-card-content {
   flex: auto;
   display: flex;
   padding: 10px 20px;
@@ -19,8 +19,8 @@
   height: auto;
 }
 
-
-.plus, .minus{
+.plus,
+.minus {
   margin-right: 10px;
   position: absolute;
   width: 30px;
@@ -34,22 +34,22 @@
   line-height: 0.8rem;
 }
 
-.plus{
+.plus {
   margin-left: 10px;
 }
 
-
-.plus:hover,.minus:hover{
+.plus:hover,
+.minus:hover {
   background-color: var(--color-font-dark);
   border: transparent 1px solid;
   color: white;
 }
-.cart-item-quantity{
+.cart-item-quantity {
   display: flex;
   align-items: center;
 }
 
-.summary-section{
+.summary-section {
   padding: 5rem;
   border: 2px black solid;
   border-radius: 25px;
@@ -57,15 +57,73 @@
   margin-top: 15px;
 }
 
-.summary-section-header, .summary-section-footer{
+.summary-section-header,
+.summary-section-footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 3rem;
   padding: 10px 10px;
   border-bottom: 2px black solid;
   line-height: 2rem;
 }
 
-.summary-section-footer{
-  border-bottom: none
+.summary-section-footer {
+  border-bottom: none;
+}
+
+@media only screen and (max-width: 1280px) {
+  .main-responsive {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-card-content-header {
+    flex-direction: column;
+  }
+
+  .item-card-content {
+    position: relative;
+  }
+  .bin-icon {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .item-card-content * p {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .cart-card-wrapper {
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item-card img {
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .main-responsive {
+    align-items: center;
+  }
+  .summary-section {
+    padding: 3rem;
+  }
+  .summary-section-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .order-grid {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
