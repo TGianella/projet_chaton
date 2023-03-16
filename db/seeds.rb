@@ -6,9 +6,13 @@ Cart.destroy_all
 OrderItem.destroy_all
 Category.destroy_all
 
+# Create admin
+User.create!(email: 'my_admin_mailer@yopmail', password: 'foobar', admin: true)
+
 10.times do |_|
   User.create!(email: Faker::Internet.email,
-               password: 'foobar')
+               password: 'foobar',
+               admin: false)
 end
 
 # 20.times do |_|
