@@ -7,22 +7,21 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Bienvenue sur AwesomeCatPics !')
   end
 
-  def send_order
-    @order = Order.last
-    if @order.status == 'paid'
-      @user = @order.user.email
-      @order_items = order.order_items
-      mail(to: @user.email, subject: 'Merci pour ta commande')
-    end
+  def send_order(order)
+    puts 'methode send_order TESTTTTT'
+    @order = order
+    @user = order.user
+    @order_items = order.order_items
+    mail(to: @user.email, subject: 'Merci pour ta commande')
   end
 
-  def order_recap_to_admin
-    @user = User.where(admin: true).pluck(:email)
-    @order = Order.last
-    if @order.status == 'paid'
-      @user = @order.user.email
-      @order_items = order.order_items
-      mail(to: @user.email, subject: 'Nouvelle commande')
+  def order_recap_to_admin(order)
+    @order = order
+    @mail_admin = User.where(admin: true).pluck(:email)
+    @user = order.user
+    @order_items = order.order_items
+    @mail_admin.each do |mail|
+      mail(to: mail, subject: 'Nouvelle commande')
     end
   end
 end
