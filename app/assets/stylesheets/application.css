@@ -17,51 +17,47 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 
-:root{
-
-   --color-bg: #F7F7F7;
-   --color-font-dark: #070707;
-   --color-font-white: #F7F7F7;
-
+:root {
+  --color-bg: #f7f7f7;
+  --color-font-dark: #070707;
+  --color-font-white: #f7f7f7;
 }
 
-main{
-   min-height: 86vh;
+main {
+  min-height: 100vh;
 }
 
 * {
-   font-family: 'Nunito Sans', sans-serif;
-   box-sizing: border-box;
-   box-sizing: border-box;
-   color : var(--color-font-dark);
-   /* outline: 1px red solid; */
-    }
+  font-family: "Nunito Sans", sans-serif;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  color: var(--color-font-dark);
+  /* outline: 1px red solid; */
+}
 
 body {
-   background-color: var(--color-bg);
-    }
+  background-color: var(--color-bg);
+}
 
 .fa-shopping-basket {
-   color: rgb(236, 236, 236);
+  color: rgb(236, 236, 236);
 }
 
 @media only screen and (max-width: 640px) {
-   .cart {
-     display:none;
-   }
- }
+  .cart {
+    display: none;
+  }
+}
 
 .fa-shopping-basket {
-   color: rgb(236, 236, 236);
+  color: rgb(236, 236, 236);
 }
-
-
 
 .fa-user {
-   color: aliceblue;
+  color: aliceblue;
 }
 .user-connect {
-   color: rgb(14, 148, 50);
+  color: rgb(14, 148, 50);
 }
 
 /* * {
@@ -69,10 +65,10 @@ body {
 } */
 
 @media only screen and (max-width: 640px) {
-   .cart {
-     display:none;
-   }
- }
+  .cart {
+    display: none;
+  }
+}
 
 .fa-search {
    color: aliceblue;
