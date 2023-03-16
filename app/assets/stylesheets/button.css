@@ -1,0 +1,13 @@
+.button-primary-black{
+  background-color: white;
+  color: black;
+  border-radius: 25px;
+  border: 1px solid black;
+  padding: 5px 15px;
+}
+
+.button-primary-black:hover{
+  background-color: black;
+  color: white;
+  border: 1px solid transparent
+}
