@@ -36,17 +36,3 @@ window.addEventListener("scroll", function () {
   coin1.style.top = value * 1 + "px";
   coin2.style.top = value * 0.2 + "px";
 });
-
-let statusColor = document.getElementById("status-wrapper");
-let status = document.querySelectorAll(".status-wrapper > p");
-console.log(status)
-
-status.forEach(element => {
-  if (element.textContent === "pending") {
-    console.log(element.textContent)
-  statusColor.classList.add("pending");
-  console.log(element.textContent)
-} else if (element.textContent === "paid") {
-  statusColor.classList.add("paid");}
-  
-})
