@@ -24,18 +24,17 @@ end
   Category.create(name: Faker::Hobby.activity)
 end
 
-img_url = ['https://i.imgur.com/pqrE0rb.png', 'https://i.imgur.com/IfSX8GV.png', 'https://i.imgur.com/seqQtRV.png']
+IMG_URLS = ['https://i.imgur.com/pqrE0rb.png', 'https://i.imgur.com/IfSX8GV.png', 'https://i.imgur.com/seqQtRV.png']
+RARITY_PRICE_FACTOR = [1, 2, 5, 10, 100]
 20.times do |_|
-  Item.create!(title: Faker::Games::Pokemon.name,
-               category: Category.all.sample,
-               image_url: img_url[rand(0..2)],
-               rarity: rand(0..4))
-end
+  item = Item.new(title: Faker::Games::Pokemon.name,
+                  category: Category.all.sample,
+                  description: Faker::Lorem.paragraph,
+                  image_url: IMG_URLS[rand(0..2)],
+                  rarity: rand(0..4))
 
-facteur = [rand(1.00..24.00), rand(25.00..50.00), rand(51.00..99.00), rand(100.00..455.00), rand(456.00..999.00)]
-
-Item.all.each do |item|
-  item.update!(price: ('%.02f' % facteur[item.rarity]))
+  item.price = (format('%.02f', (RARITY_PRICE_FACTOR[item.rarity] * rand(1.0..50.0))))
+  item.save!
 end
 
 # Order.all.each do |order|
