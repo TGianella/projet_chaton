@@ -50,5 +50,22 @@
 }
 
 .summary-section{
-  
+  padding: 5rem;
+  border: 2px black solid;
+  border-radius: 25px;
+  height: fit-content;
+  margin-top: 15px;
+}
+
+.summary-section-header, .summary-section-footer{
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  padding: 10px 10px;
+  border-bottom: 2px black solid;
+  line-height: 2rem;
+}
+
+.summary-section-footer{
+  border-bottom: none
 }

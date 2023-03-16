@@ -1,16 +1,27 @@
 <%= render 'layouts/hero-little' %>
 <main class="container mx-auto mt-20 px-5 grid grid-cols-10">
   <div class="item-section col-span-6">
-  <% @cart.order_items.each do |order_item| %>
-    <%= render partial: "item-cart", locals:{order_item: order_item} %>
+    <% @cart.order_items.each do |order_item| %>
+      <%= render partial: "item-cart", locals:{order_item: order_item} %>
     <% end %>
   </div>
   <div class="summary-section col-span-4">
     <h1 class="sub-title">Summary :</h1>
-    <p>
-    <%= @item_quantity %> products
-    <%= @item_quantity_price %>€ products
+    <div class="summary-section-header">
+      <p class="p-content">
+        <%= @cart.total_quantity %> products
+      </p>
+      <%= button_to  cart_path(@cart), method: 'delete' do %>
+        <i class="fas fa-trash fa-2xl"></i>
+      <% end %>
+    </div>
+    <div class="summary-section-footer">
+    <p class="p-content">
+      Total : 
     </p>
-    <%= button_to "Vider le panier", cart_path(@cart), method: 'delete' %>
+    <p class="p-content">
+      <%= '%.02f' % @cart.total_price %>€
+    </p>
+    </div>
   </div>
 </main>
