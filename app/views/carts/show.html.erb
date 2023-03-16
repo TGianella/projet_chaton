@@ -9,5 +9,5 @@
 
 
 <%= button_to "Payer - creer order", orders_path %>
-
+<%= button_to "Payer", checkout_create_path(total: 50), class: "btn btn-primary", remote: true, data: { turbo: false } %>
 
