@@ -26,6 +26,8 @@ class Order < ApplicationRecord
 
   def order_recap_to_admin_email
     UserMailer.order_recap_to_admin(self).deliver_later
+  end
+  
   def validate_payment
     self.status = 'paid'
     save
