@@ -14,9 +14,6 @@ module Admin
     end
 
     def update
-      puts '#' * 60
-      p params
-      puts '#' * 60
       @user = User.find(params[:id])
       if params[:admin] == true
         @user.update(admin: true)
