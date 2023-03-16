@@ -1,0 +1,16 @@
+<% @orders.each do |order| %>
+<% total = 0 %>
+  <p>Numéro de commande <%= order.id%> | Etat du paiement : <%=order.status%> | Date de la commande : <%=order.created_at%></p>
+  <% order.order_items.each do |order_item| %>
+  <p>Titre : <%= order_item.item.title %> </p>
+  <p>Prix unitaire : <%= order_item.item.price %> </p>
+  <p>Rareté : <%= order_item.item.rarity %></p>
+  <p>Quantité : <%= order_item.quantity%></p>
+  <p>Sous-total : <%= order_item.item.price * order_item.quantity %> </p>
+  <% soustotal = order_item.item.price * order_item.quantity %>
+  <% total += soustotal %>
+  <p>--------------------------</p>
+  <% end %>
+  <p>Total : <%= total%> </p>
+  <p>################################################################</p>
+<% end %>
