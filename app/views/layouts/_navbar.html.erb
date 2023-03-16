@@ -86,6 +86,9 @@
             <% if current_user%>
               <a href="<%= edit_user_registration_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Mon profil</a>
               <a href="<%=orders_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Mes commandes</a>
+              <% if isAdmin? %>
+                <a href="<%= admin_users_path %>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Gestion Admin</a>
+              <% end %>
               <a href="<%= destroy_user_session_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Se déconnecter</a>
             <%else %>
               <a href="<%= new_user_session_path%>" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Se connecter</a>
