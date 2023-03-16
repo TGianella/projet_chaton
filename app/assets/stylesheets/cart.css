@@ -76,102 +76,52 @@
   .main-responsive {
     display: flex;
     flex-direction: column;
+    
   }
-
-  .item-card-content-header {
-    flex-direction: column;
-  }
-
-  .item-card-content {
-    position: relative;
-  }
-  .bin-icon {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-  }
-
-  .item-card-content * p {
-    font-size: 1.7rem;
-  }
-}
-@media only screen and (max-width: 520px) {
-  .cart-card-wrapper {
-    flex-direction: column;
-    width: fit-content;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .item-card img {
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
-    border-bottom-left-radius: 0px;
-  }
-
-  .main-responsive {
-    align-items: center;
-  }
-  .summary-section {
-    padding: 3rem;
-  }
-  .summary-section-footer {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-@media only screen and (max-width: 1280px) {
-  .main-responsive {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .item-card-content-header {
-    flex-direction: column;
-  }
-
-  .item-card-content {
-    position: relative;
-  }
-  .bin-icon {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-  }
-
-  .item-card-content * p {
-    font-size: 1.7rem;
-  }
-}
-@media only screen and (max-width: 520px) {
-  .cart-card-wrapper {
-    flex-direction: column;
-    width: fit-content;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .item-card img {
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
-    border-bottom-left-radius: 0px;
-  }
-
-  .main-responsive {
-    align-items: center;
-  }
-  .summary-section {
-    padding: 3rem;
-  }
-  .summary-section-footer {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-@media only screen and (max-width: 1280px) {
   .order-grid {
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+
+  .item-card-content-header {
+    flex-direction: column;
+  }
+
+  .item-card-content {
+    position: relative;
+  }
+  .bin-icon {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .item-card-content * p {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .cart-card-wrapper {
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item-card img {
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .main-responsive {
+    align-items: center;
+  }
+  .summary-section {
+    padding: 2rem;
+  }
+  .summary-section-footer {
+    align-items: center;
   }
 }
