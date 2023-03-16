@@ -1,5 +1,6 @@
 class CheckoutController < ApplicationController
   # before_action :success, only: [:create]
+  # Mon super commentaire
 
   def create
     @total = params[:total].to_d
