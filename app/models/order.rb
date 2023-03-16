@@ -11,4 +11,10 @@ class Order < ApplicationRecord
     self.status = "paid"
     self.save
   end
+  
+  def import_cart(cart)
+    cart.order_items.each do |order_item|
+      OrderItem.create!(order: self, item: order_item.item, quantity: order_item.quantity)
+    end
+  end
 end

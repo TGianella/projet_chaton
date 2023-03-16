@@ -27,9 +27,11 @@ class CheckoutController < ApplicationController
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
     current_user.orders.last.validate_payment
+    empty_cart
   end
 
   def cancel
+    cancel_order
   end
 
   private
@@ -38,11 +40,20 @@ class CheckoutController < ApplicationController
     @cart = current_user.cart
     @order = Order.new(user: current_user, status: "pending")
     @order.save
-    @cart.order_items.each do |order_item|
-      OrderItem.create!(order: @order, item: order_item.item, quantity: order_item.quantity)
-    end
+    @order.import_cart(@cart)
+    
+  end
+
+  def cancel_order
+    @order = current_user.orders.last
+    @order.destroy
+  end
+
+  def empty_cart
+    @cart = current_user.cart
     @cart.destroy
     @cart = Cart.new(user: current_user)
     @cart.save
   end
+
 end
