@@ -4,6 +4,9 @@
   border: 2px solid black;
   border-radius: 25px;
   margin-bottom: 2rem;
+  max-height: 715px;
+  overflow-y: scroll;
+  position: relative;
 }
 .order-title {
   font-size: 5rem;

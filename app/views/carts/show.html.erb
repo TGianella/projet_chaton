@@ -1,5 +1,5 @@
 <%= render 'layouts/hero-little' %>
-<main class="container mx-auto mt-20 px-5 grid grid-cols-10">
+<main class="main-responsive container mx-auto mt-20 px-5 grid grid-cols-10">
   <div class="item-section col-span-6">
     <% @cart.order_items.each do |order_item| %>
       <%= render partial: "item-cart", locals:{order_item: order_item} %>
@@ -22,7 +22,7 @@
       <p class="p-content">
         <%= '%.02f' % @cart.total_price %>€
       </p>
-      <%= button_to "Payer", checkout_create_path(total: @cart.total_price), class: "btn btn-primary", remote: true, data: { turbo: false } %>
+      <%= button_to "Payer", checkout_create_path(total: @cart.total_price), class: "btn btn-primary-black", remote: true, data: { turbo: false } %>
     </div>
   </div>
 </main>

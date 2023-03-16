@@ -6,9 +6,9 @@
     </div>
     <div class="item-card-content flex">
       <div class="item-card-content-header flex justify-between">
-        <p class="p-content"><%=order_item.item.title%></p>
-        <p class="p-content"><%='%.02f' % (order_item.total_price)%> €</p>
-        <%= button_to order_item_path(order_item), method: 'delete' do %>
+        <p class="p-content cart-page"><%=order_item.item.title%></p>
+        <p class="p-content cart-page"><%='%.02f' % (order_item.total_price)%> €</p>
+        <%= button_to order_item_path(order_item), method: 'delete', class:'bin-icon' do %>
           <i class="fas fa-times fa-2x"></i>
         <% end %>
         
