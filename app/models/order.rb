@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  after_create :send_order_email, :order_recap_to_admin_email
   belongs_to :user
   has_many :order_items
   has_many :items, through: :order_items
@@ -17,5 +18,13 @@ class Order < ApplicationRecord
     sum = 0
     order_items.each { |order_item| sum += order_item.quantity }
     sum
+  end
+
+  def send_order_email
+    UserMailer.send_order(self).deliver_later
+  end
+
+  def order_recap_to_admin_email
+    UserMailer.order_recap_to_admin(self).deliver_later
   end
 end
