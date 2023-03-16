@@ -8,7 +8,6 @@ class UserMailer < ApplicationMailer
   end
 
   def send_order(order)
-    puts 'methode send_order TESTTTTT'
     @order = order
     @user = order.user
     @order_items = order.order_items
@@ -17,11 +16,10 @@ class UserMailer < ApplicationMailer
 
   def order_recap_to_admin(order)
     @order = order
-    @mail_admin = User.where(admin: true).pluck(:email)
     @user = order.user
     @order_items = order.order_items
-    @mail_admin.each do |mail|
-      mail(to: mail, subject: 'Nouvelle commande')
+    User.admins.pluck(:email).each do |email_adress|
+      mail(to: email_adress, subject: 'Nouvelle commande')
     end
   end
 end

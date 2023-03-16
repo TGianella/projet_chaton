@@ -21,4 +21,8 @@ class User < ApplicationRecord
   def create_cart
     Cart.create(user: self)
   end
+
+  def self.admins
+    User.where(admin: true).to_a
+  end
 end
