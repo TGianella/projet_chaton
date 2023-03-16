@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
     @cart.destroy
     @cart = Cart.new(user: current_user)
     @cart.save
-    redirect_to root_path
+    redirect_to checkout_create_path(total: 50)
   end
 
   def show
