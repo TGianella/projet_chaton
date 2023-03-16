@@ -31,5 +31,26 @@
 }
 .rarity-cart-4 {
   border: 2px solid #c116f9;
-  border-radius: 25px;  
+  border-radius: 25px;
+}
+
+.rarity-order-0 {
+  border: 2px solid #aba8af;
+  border-radius: 50%;
+}
+.rarity-order-1 {
+  border: 2px solid #ff7300;
+  border-radius: 50%;
+}
+.rarity-order-2 {
+  border: 2px solid #ffe840;
+  border-radius: 50%;
+}
+.rarity-order-3 {
+  border: 2px solid #00fff8;
+  border-radius: 50%;
+}
+.rarity-order-4 {
+  border: 2px solid #c116f9;
+  border-radius: 50%;
 }
