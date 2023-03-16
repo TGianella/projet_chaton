@@ -1,5 +1,4 @@
 class Order < ApplicationRecord
-  after_create :send_order_email, :order_recap_to_admin_email
   belongs_to :user
   has_many :order_items
   has_many :items, through: :order_items
@@ -20,17 +19,12 @@ class Order < ApplicationRecord
     sum
   end
 
-  def send_order_email
-    UserMailer.send_order(self).deliver_later
-  end
-
-  def order_recap_to_admin_email
-    UserMailer.order_recap_to_admin(self).deliver_later
-  end
-  
   def validate_payment
     self.status = 'paid'
     save
+    puts 'methode validate_payment TESTTTTT'
+    UserMailer.order_recap_to_admin(self).deliver_now
+    UserMailer.send_order(self).deliver_now
   end
 
   def import_cart(cart)
