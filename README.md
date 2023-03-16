@@ -1,24 +1,35 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Notre bannière](https://i.imgur.com/KtAHcfK.jpg)
+<br><br>
+<h1 align="center"><strong>MEOWTH NFT</strong></h1>
+<br>
 
-Things you may want to cover:
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/TGianella/projet_chaton)<br><br>
 
-* Ruby version
+## <ins>Description</ins>
 
-* System dependencies
+Il s'agit d'un site e-commerce de vente de NFT (Non Fungible Token) de chats.<br><br>
 
-* Configuration
+## <ins>Fonctionnement</ins>
 
-* Database creation
+* Pense à démarrer le service postgresql si tu utilises WSL &rarr; `sudo service postgresql start`
+* Lance `bundle install`
+* Puis `rails db:create`
+* Et enfin `rails db:migrate` pour mettre tes bases de données UP
+* Pour générer un peu de contenu, lance la commande `rails db:seed`.
+<br><br>
 
-* Database initialization
+## <ins>Accès au site</ins>
 
-* How to run the test suite
+Pour accéder au site localement, lance la commande `rails s` qui va lancer un serveur.
+Va sur [le site](http://localhost:3000) via ce lien une fois que tu as exécuté toutes ces commandes.
 
-* Services (job queues, cache servers, search engines, etc.)
+Le site est également visible sur internet &rarr; [AwesomeCatPics](https://awesomecatpics-development.herokuapp.com/)
+<br><br>
 
-* Deployment instructions
+## <ins>Auteurs</ins>
 
-* ...
+* [@TGianella](https://www.github.com/TGianella)
+* [@Steakinzer](https://www.github.com/Steakinzer)
+* [@1996thomas](https://www.github.com/1996thomas)
+* [@rockethelll](https://www.github.com/rockethelll)

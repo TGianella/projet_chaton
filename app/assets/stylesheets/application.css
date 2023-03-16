@@ -37,6 +37,8 @@ main {
 
 body {
   background-color: var(--color-bg);
+  width: 100vw;
+  overflow-x: hidden
 }
 
 .fa-shopping-basket {
