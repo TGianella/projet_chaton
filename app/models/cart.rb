@@ -3,7 +3,6 @@ class Cart < ApplicationRecord
   has_many :items, through: :order_items
   belongs_to :user
 
-<<<<<<< HEAD
   def import_order(order)
     order.order_items.each do |order_item|
       OrderItem.create!(cart: self, item: order_item.item, quantity: order_item.quantity)
@@ -14,7 +13,8 @@ class Cart < ApplicationRecord
     user.cart.destroy
     cart = Cart.new(user: user)
     cart.save
-=======
+  end
+
   def total_price
     sum = 0
     order_items.each { |order_item| sum += order_item.total_price }
@@ -25,6 +25,5 @@ class Cart < ApplicationRecord
     sum = 0
     order_items.each { |order_item| sum += order_item.quantity }
     sum
->>>>>>> development
   end
 end
