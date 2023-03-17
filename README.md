@@ -24,7 +24,7 @@ Il s'agit d'un site e-commerce de vente de NFT (Non Fungible Token) de chats.<br
 Pour accéder au site localement, lance la commande `rails s` qui va lancer un serveur.
 Va sur [le site](http://localhost:3000) via ce lien une fois que tu as exécuté toutes ces commandes.
 
-Le site est également visible sur internet &rarr; [AwesomeCatPics](https://awesomecatpics-development.herokuapp.com/)
+Le site est également visible sur internet &rarr; [AwesomeCatPics](https://awesomecatpics.herokuapp.com/)
 <br><br>
 
 ## <ins>Auteurs</ins>
